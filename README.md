@@ -1,6 +1,5 @@
-# PWNagotchi MacSpoofing v.0.1
 ============================================
-PWNagotchi MacSpoofing v.0.1
+PWNagotchi MAC Spoofing v.0.1
 ============================================
 ESPAÑOL:
 ============================================
@@ -22,7 +21,7 @@ PWNagotchi MacSpoofing v.0.1 se carga al iniciar el PWNagotchi y sustituye la MA
 La nueva MAC asignada se muestra en la parte inferior derecha en el display.
 
 ============================================
-Instalación de PWNagotchi MacSpoofing v.0.1
+Instalación de PWNagotchi MAC Spoofing v.0.1
 ============================================
 
 Copia el archivo MACSpoofing.py en el directorio "/etc/pwnagotchi/custom-plugins/" de tu tarjeta microsd.
@@ -34,7 +33,7 @@ main.plugins.MACSpoofing.enabled = true
 Reinicia el PWNagotchi.
 
 ============================================
-PWNagotchi MacSpoofing v.0.1
+PWNagotchi MAC Spoofing v.0.1
 ============================================
 ENGLISH:
 ============================================
@@ -56,7 +55,7 @@ PWNagotchi MacSpoofing v.0.1 is loaded when PWNagotchi starts up and replaces th
 The newly assigned MAC is displayed in the bottom right corner of the display.
 
 ============================================
-Installation of PWNagotchi MacSpoofing v.0.1
+Installation of PWNagotchi MAC Spoofing v.0.1
 ============================================
 
 Copy the file MACSpoofing.py to the directory "/etc/pwnagotchi/custom-plugins/" on your microSD card.
