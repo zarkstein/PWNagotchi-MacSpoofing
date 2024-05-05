@@ -1,5 +1,5 @@
 *****
-PWNagotchi MAC Spoofing v.0.1 por Zarkstein
+PWNagotchi MAC Spoofing por Zarkstein
 *****
 
 La dirección MAC es un identificador único asignado a la tarjeta de red de un dispositivo, y se utiliza para identificar de manera única ese dispositivo en una red.
@@ -39,5 +39,5 @@ Reinicia el PWNagotchi.
 
 *****
 Más información: 
-https://github.com/zarkstein/PWNagotchi-MacSpoofing-v.0.1/
+https://github.com/zarkstein/PWNagotchi-MacSpoofing/
 *****
