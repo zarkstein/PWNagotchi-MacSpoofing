@@ -11,7 +11,7 @@ class macspoofing(plugins.Plugin):
     __author__ = 'Zarkstein'
     __version__ = '0.1'
     __license__ = 'GPL3'
-    __description__ = 'Display MAC addresses of usb0 and wlan0 on the Pwnagotchi UI'
+    __description__ = 'Display MAC addresses of wlan0 on the Pwnagotchi UI'
 
     def __init__(self):
         self.ready = False
