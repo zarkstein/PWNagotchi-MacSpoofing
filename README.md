@@ -23,7 +23,7 @@ Install
 *****
 
 
-Copy the file MACSpoofing.py into the directory "/etc/pwnagotchi/custom-plugins/" on your PWNagotchi.
+Copy the file MACSpoofing.py into "/etc/pwnagotchi/custom-plugins/" directory on your PWNagotchi.
 
 Modify the file "/etc/pwnagotchi/config.toml" and ensure that you have the following line:
 
@@ -34,7 +34,6 @@ Add the following line:
 main.plugins.MACSpoofing.enabled = true
 
 Restart the PWNagotchi.
-
 
 *****
 More Info: 
