@@ -2,9 +2,9 @@
 PWNagotchi MAC Spoofing v.0.1 by Zarkstein
 *****
 
-"MAC spoofing" is a technique used to change the MAC (Media Access Control) address of a network device to make it appear as another.
-
 The MAC address is a unique identifier assigned to a device's network card, and it is used to uniquely identify that device on a network.
+
+"MAC spoofing" is a technique used to change the MAC (Media Access Control) address of a network device to make it appear as another.
 
 When MAC spoofing is performed, an attacker can change the MAC address of their device to match the MAC address of another device.
 
@@ -17,6 +17,7 @@ In any case, even if the MAC does not match an authorized device on the network,
 PWNagotchi MacSpoofing v.0.1 is loaded when PWNagotchi starts up and replaces the original MAC of our device, assigning it a new random MAC that changes every 60 seconds.
 
 The newly assigned MAC is displayed in the bottom right corner of the display and/or the UI.
+
 
 *****
 Install
@@ -35,7 +36,12 @@ main.plugins.MACSpoofing.enabled = true
 
 Restart the PWNagotchi.
 
+
 *****
 More Info: 
 https://github.com/zarkstein/PWNagotchi-MacSpoofing-v.0.1/
 *****
+
+
+
+
