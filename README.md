@@ -1,5 +1,5 @@
 *****
-PWNagotchi MAC Spoofing v.0.1 by Zarkstein
+PWNagotchi MAC Spoofing by Zarkstein
 *****
 
 The MAC address is a unique identifier assigned to a device's network card, and it is used to uniquely identify that device on a network.
@@ -39,7 +39,7 @@ Restart the PWNagotchi.
 
 *****
 More Info: 
-https://github.com/zarkstein/PWNagotchi-MacSpoofing-v.0.1/
+https://github.com/zarkstein/PWNagotchi-MacSpoofing/
 *****
 
 
