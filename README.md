@@ -1,6 +1,6 @@
 
 ===================================================================
-PWNagotchi MAC Spoofing v.0.1 por Zarkstein
+PWNagotchi MAC Spoofing v.0.1 by Zarkstein
 ===================================================================
 ENGLISH:
 ===================================================================
@@ -66,7 +66,7 @@ PWNagotchi MacSpoofing v.0.1 se carga al iniciar el PWNagotchi y sustituye la MA
 La nueva MAC asignada se muestra en la parte inferior derecha en el display.
 
 ===================================================================
-Instalación de PWNagotchi MAC Spoofing v.0.1
+Instalación de PWNagotchi MAC Spoofing v.0.1 por Zarkstein
 ===================================================================
 
 Copia el archivo MACSpoofing.py en el directorio "/etc/pwnagotchi/custom-plugins/" de tu PWNagotchi.
