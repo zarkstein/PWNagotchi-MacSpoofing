@@ -12,11 +12,11 @@ If the MAC matches an authorized device on the network, it can allow the attacke
 
 MAC spoofing can also be used to perform "man-in-the-middle" attacks, where the attacker intercepts and modifies traffic between two devices on the network.
 
-In any case, even if the MAC does not match an authorized device on the network, it still allows us to hide the real MAC of our device.
+In any case, even if the MAC does not match an authorized device on the network, it allows us to ofuscate the real MAC of our device.
 
 PWNagotchi MacSpoofing v.0.1 is loaded when PWNagotchi starts up and replaces the original MAC of our device, assigning it a new random MAC that changes every 60 seconds.
 
-The newly assigned MAC is displayed in the bottom right corner of the display.
+The newly assigned MAC is displayed in the bottom right corner of the display and/or the UI.
 
 *****
 Install
@@ -30,6 +30,7 @@ Modify the file "/etc/pwnagotchi/config.toml" and ensure that you have the follo
 main.custom_plugins = "/etc/pwnagotchi/custom-plugins/"
 
 Add the following line:
+
 main.plugins.MACSpoofing.enabled = true
 
 Restart the PWNagotchi.
