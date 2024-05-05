@@ -14,7 +14,7 @@ Si la MAC coincide con un dispositivo autorizado en la red, puede permitir al at
 
 En cualquier caso, incluso si la MAC no coincide con un dispositivo autorizado en la red, nos permite ofuscar la verdadera MAC de nuestro dispositivo.
 
-PWNagotchi MacSpoofing v.0.1 se carga cuando PWNagotchi se inicia y reemplaza la MAC original de nuestro dispositivo, asignándole una nueva MAC aleatoria que cambia cada 60 segundos.
+PWNagotchi MacSpoofing v.0.1 se carga cuando PWNagotchi se inicia y reemplaza la MAC original de nuestro dispositivo, asignándole una nueva MAC aleatoria que cambia cada 15 minutos.
 
 La nueva MAC asignada se muestra en la esquina inferior derecha de la pantalla y/o la interfaz de usuario.
 
