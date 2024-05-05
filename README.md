@@ -14,7 +14,7 @@ If the MAC matches an authorized device on the network, it can allow the attacke
 
 In any case, even if the MAC does not match an authorized device on the network, it allows us to ofuscate the real MAC of our device.
 
-PWNagotchi MacSpoofing v.0.1 is loaded when PWNagotchi starts up and replaces the original MAC of our device, assigning it a new random MAC that changes every 15 minutes.
+PWNagotchi MacSpoofing is loaded when PWNagotchi starts up and replaces the original MAC of our device, assigning it a new random MAC that changes every 15 minutes.
 
 The newly assigned MAC is displayed in the bottom right corner of the display and/or the UI.
 
