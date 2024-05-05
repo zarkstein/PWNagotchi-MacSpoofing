@@ -8,9 +8,9 @@ The MAC address is a unique identifier assigned to a device's network card, and 
 
 When MAC spoofing is performed, an attacker can change the MAC address of their device to match the MAC address of another device.
 
-If the MAC matches an authorized device on the network, it can allow the attacker to bypass MAC address-based security restrictions, such as access filters, and gain unauthorized access to the network.
-
 MAC spoofing can also be used to perform "man-in-the-middle" attacks, where the attacker intercepts and modifies traffic between two devices on the network.
+
+If the MAC matches an authorized device on the network, it can allow the attacker to bypass MAC address-based security restrictions, such as access filters, and gain unauthorized access to the network.
 
 In any case, even if the MAC does not match an authorized device on the network, it allows us to ofuscate the real MAC of our device.
 
