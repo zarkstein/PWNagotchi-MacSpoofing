@@ -92,16 +92,12 @@ Cuando transcurre el intervalo de tiempo especificado, el plugin genera una nuev
 
 
 *****
-Descarga del Plugin:
+Desactivación del Plugin:
 *****
 
-Cuando el plugin se descarga o se desactiva, elimina el elemento de la interfaz de usuario relacionado con la dirección MAC.
+Cuando el plugin se se desactiva, elimina el elemento de la interfaz de usuario relacionado con la dirección MAC.
 
 Esto ayuda a limpiar la interfaz de usuario y liberar recursos cuando el plugin ya no está en uso.
-
-
-*****
-
 
 *****
 Más información
@@ -113,14 +109,11 @@ https://github.com/zarkstein/PWNagotchi-MacSpoofing/
 Última versión del plugin disponible para descargar en:
 https://github.com/zarkstein/PWNagotchi-MacSpoofing/releases
 
-
-
 *****
 Contribuciones
 *****
 
 ¡Las contribuciones son bienvenidas! Si tienes ideas para mejoras, problemas o correcciones, por favor, abre un issue o envía un pull request.
-
 
 *****
 Licencia
