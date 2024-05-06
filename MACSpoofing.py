@@ -25,7 +25,6 @@ class macspoofing(plugins.Plugin):
         self._agent = agent
         logging.info("MAC Spoofing Plugin ready.")
         self.ready = True
-        # Cambio de MAC al iniciar el programa
         self.change_mac_address()
 
     def on_ui_setup(self, ui):
