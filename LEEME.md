@@ -18,7 +18,6 @@ PWNagotchi MacSpoofing se carga cuando PWNagotchi se inicia y reemplaza la MAC o
 
 La nueva MAC asignada se muestra en la esquina inferior derecha de la pantalla y/o la interfaz de usuario.
 
-
 *****
 Instalación
 *****
@@ -36,8 +35,68 @@ main.plugins.MACSpoofing.enabled = true
 
 Reinicia el PWNagotchi.
 
+*****
+Uso
+*****
+
+Una vez que el plugin está instalado y activo, verás una nueva sección en la interfaz de usuario de tu Pwnagotchi que muestra la dirección MAC actual de la interfaz wlan0 y la cambiará periódicamente.
 
 *****
-Más información: 
-https://github.com/zarkstein/PWNagotchi-MacSpoofing/
+Configuración
 *****
+
+Por defecto, el plugin está configurado para cambiar la dirección MAC cada 15 minutos. 
+Puedes ajustar este valor modificando el código del plugin en el archivo macspoofing.py.
+
+*****
+¿Cómo funciona PWNagotchi MACSpoofing?
+*****
+
+    Inicio y Carga del Plugin:
+        Cuando Pwnagotchi se inicia, el plugin "MAC Spoofing" se carga automáticamente si está instalado y activado.
+        Durante la carga, se establece el estado inicial del plugin y se configura para estar listo para su uso.
+
+    Cambio de Dirección MAC:
+        El plugin genera una nueva dirección MAC aleatoria para la interfaz wlan0 (WiFi).
+        Utiliza el comando ip link set de Linux para cambiar la dirección MAC de la interfaz wlan0 a la nueva dirección generada.
+        Si el cambio de dirección MAC falla, el plugin realiza varios intentos (definidos por max_retries) con intervalos de espera (definidos por time.sleep) antes de registrar un error.
+
+    Interfaz de Usuario:
+        El plugin muestra la dirección MAC actualizada en la interfaz de usuario de Pwnagotchi.
+        Utiliza el componente LabeledValue de la biblioteca de interfaz de usuario de Pwnagotchi para mostrar la dirección MAC en la pantalla.
+
+    Actualización Periódica:
+        El plugin actualiza periódicamente la dirección MAC mostrada en la interfaz de usuario.
+        La frecuencia de actualización está definida por el intervalo de tiempo especificado en self.last_update_time.
+        Cuando transcurre el intervalo de tiempo especificado, el plugin genera una nueva dirección MAC y actualiza la interfaz de usuario.
+
+    Descarga del Plugin:
+        Cuando el plugin se descarga o se desactiva, elimina el elemento de la interfaz de usuario relacionado con la dirección MAC.
+        Esto ayuda a limpiar la interfaz de usuario y liberar recursos cuando el plugin ya no está en uso.
+
+
+En resumen, el plugin "MAC Spoofing" cambia periódicamente la dirección MAC de la interfaz wlan0 de Pwnagotchi y muestra la dirección MAC actualizada en la interfaz de usuario. 
+Esto puede ayudar a mejorar la privacidad y la seguridad al ocultar la identidad del dispositivo en redes públicas.
+
+*****
+Más información
+*****
+
+Información sobre el autor:
+https://github.com/zarkstein/PWNagotchi-MacSpoofing/
+
+Última versión del plugin disponible para descargar en:
+https://github.com/zarkstein/PWNagotchi-MacSpoofing/releases
+
+*****
+Contribuciones
+*****
+¡Las contribuciones son bienvenidas! Si tienes ideas para mejoras, problemas o correcciones, por favor, abre un issue o envía un pull request.
+
+*****
+Licencia
+*****
+
+Este plugin se publica bajo la licencia GPL-3.0. Para más detalles, por favor, consulta el archivo LICENSE.
+
+``
