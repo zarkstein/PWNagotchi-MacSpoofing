@@ -16,7 +16,6 @@ class macspoofing(plugins.Plugin):
     def __init__(self):
         self.ready = False
         self.last_update_time = 0
-        self.original_wlan_mac = ""
         self.new_wlan_mac = ""
 
     def on_loaded(self):
@@ -32,26 +31,6 @@ class macspoofing(plugins.Plugin):
     def on_ui_setup(self, ui):
         ui.add_element('mac_display', LabeledValue(color=BLACK, label="", value='Initializing...',
                                                    position=(135, 95), label_font=fonts.Small, text_font=fonts.Small))
-
-    def get_mac_address(self, interface="wlan0"):
-        max_retries = 100
-        retries = 0
-        while retries < max_retries:
-            try:
-                command = f"ip link show {interface} | awk '/ether/ {{print $2}}'"
-                mac = subprocess.getoutput(command).strip().upper()
-                if mac:
-                    return mac
-                else:
-                    logging.warning("Empty MAC address obtained. Retrying...")
-                    time.sleep(5)
-                    retries += 1
-            except Exception as e:
-                logging.exception(repr(e))
-                retries += 1
-                time.sleep(5)
-        logging.error("Failed to obtain MAC address after multiple retries.")
-        return ""
 
     def change_mac_address(self, interface="wlan0"):
         max_retries = 100
@@ -77,17 +56,11 @@ class macspoofing(plugins.Plugin):
 
     def on_ui_update(self, ui):
         try:
-            if not self.original_wlan_mac:
-                self.original_wlan_mac = self.get_mac_address("wlan0")
+            if time.time() - self.last_update_time >= 900:
                 self.new_wlan_mac = self.change_mac_address()
-                ui.set('mac_display', f'MAC:{self.new_wlan_mac.upper()}')
+                if self.new_wlan_mac:
+                    ui.set('mac_display', f'MAC:{self.new_wlan_mac.upper()}')
                 self.last_update_time = time.time()
-            else:
-                if time.time() - self.last_update_time >= 900:
-                    self.new_wlan_mac = self.change_mac_address()
-                    if self.new_wlan_mac:
-                        ui.set('mac_display', f'MAC:{self.new_wlan_mac.upper()}')
-                    self.last_update_time = time.time()
         except Exception as e:
             logging.exception(repr(e))
 
