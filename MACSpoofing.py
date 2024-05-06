@@ -32,7 +32,7 @@ class macspoofing(plugins.Plugin):
                                                    position=(135, 95), label_font=fonts.Small, text_font=fonts.Small))
 
     def change_mac_address(self, interface="wlan0"):
-        max_retries = 5
+        max_retries = 12
         retries = 0
         while retries < max_retries:
             try:
