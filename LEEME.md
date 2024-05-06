@@ -12,16 +12,16 @@ El spoofing de MAC también se puede utilizar para realizar ataques de "hombre e
 
 Si la MAC coincide con un dispositivo autorizado en la red, puede permitir al atacante eludir restricciones de seguridad basadas en direcciones MAC, como filtros de acceso, y obtener acceso no autorizado a la red.
 
-En cualquier caso, incluso si la MAC no coincide con un dispositivo autorizado en la red, nos permite ofuscar la verdadera MAC de nuestro dispositivo.
+En cualquier caso ofuscar la verdadera MAC de nuestro dispositivo siempre nos aportará mayor seguridad.
 
 PWNagotchi MacSpoofing se carga cuando PWNagotchi se inicia y reemplaza la MAC original de nuestro dispositivo, asignándole una nueva MAC aleatoria que cambia cada 15 minutos.
 
 La nueva MAC asignada se muestra en la esquina inferior derecha de la pantalla y/o la interfaz de usuario.
 
+
 *****
 Instalación
 *****
-
 
 Copia el archivo MACSpoofing.py en el directorio "/etc/pwnagotchi/custom-plugins/" en tu PWNagotchi.
 
@@ -35,11 +35,13 @@ main.plugins.MACSpoofing.enabled = true
 
 Reinicia el PWNagotchi.
 
+
 *****
 Uso
 *****
 
 Una vez que el plugin está instalado y activo, verás una nueva sección en la interfaz de usuario de tu Pwnagotchi que muestra la dirección MAC actual de la interfaz wlan0 y la cambiará periódicamente.
+
 
 *****
 Configuración
@@ -47,6 +49,7 @@ Configuración
 
 Por defecto, el plugin está configurado para cambiar la dirección MAC cada 15 minutos. 
 Puedes ajustar este valor modificando el código del plugin en el archivo macspoofing.py.
+
 
 *****
 ¿Cómo funciona PWNagotchi MACSpoofing?
@@ -78,6 +81,7 @@ Puedes ajustar este valor modificando el código del plugin en el archivo macspo
 En resumen, el plugin "MAC Spoofing" cambia periódicamente la dirección MAC de la interfaz wlan0 de Pwnagotchi y muestra la dirección MAC actualizada en la interfaz de usuario. 
 Esto puede ayudar a mejorar la privacidad y la seguridad al ocultar la identidad del dispositivo en redes públicas.
 
+
 *****
 Más información
 *****
@@ -88,10 +92,13 @@ https://github.com/zarkstein/PWNagotchi-MacSpoofing/
 Última versión del plugin disponible para descargar en:
 https://github.com/zarkstein/PWNagotchi-MacSpoofing/releases
 
+
 *****
 Contribuciones
 *****
+
 ¡Las contribuciones son bienvenidas! Si tienes ideas para mejoras, problemas o correcciones, por favor, abre un issue o envía un pull request.
+
 
 *****
 Licencia
@@ -99,4 +106,4 @@ Licencia
 
 Este plugin se publica bajo la licencia GPL-3.0. Para más detalles, por favor, consulta el archivo LICENSE.
 
-``
+*****
