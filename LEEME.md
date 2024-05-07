@@ -40,7 +40,7 @@ Reinicia el PWNagotchi.
 Configuración
 *****
 
-Por defecto, el plugin está configurado para cambiar la dirección MAC cada 15 minutos. 
+Por defecto, el plugin está configurado para cambiar la dirección MAC cada 15 minutos (900 segundos). 
 
 Puedes ajustar este valor modificando el código del plugin en el archivo macspoofing.py.
 
@@ -85,8 +85,6 @@ Actualización Periódica:
 *****
 
 El plugin actualiza periódicamente la dirección MAC mostrada en la interfaz de usuario.
-
-La frecuencia de actualización está definida por el intervalo de tiempo especificado en self.last_update_time.
 
 Cuando transcurre el intervalo de tiempo especificado, el plugin genera una nueva dirección MAC y actualiza la interfaz de usuario.
 
