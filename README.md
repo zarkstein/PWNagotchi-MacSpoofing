@@ -6,13 +6,7 @@ The MAC address is a unique identifier assigned to a device's network card and i
 
 "MAC spoofing" is a technique used to change a device's Media Access Control (MAC) address to make it appear to be another device.
 
-When MAC spoofing is performed, an attacker can change their device's MAC address to match the MAC address of another device.
-
-MAC spoofing can also be used to perform "man-in-the-middle" attacks, where the attacker intercepts and modifies traffic between two devices on the network.
-
-If the MAC matches an authorized device on the network, it may allow the attacker to bypass MAC address-based security restrictions, such as access filters, and gain unauthorized access to the network.
-
-In any case, obfuscating our device's true MAC address will always provide greater security.
+Obfuscating our device's true MAC address will always provide greater security.
 
 PWNagotchi MacSpoofing is loaded when PWNagotchi starts up and replaces our device's original MAC with a new random MAC that changes every 15 minutes.
 
