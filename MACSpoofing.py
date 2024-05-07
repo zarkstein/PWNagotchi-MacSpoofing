@@ -55,8 +55,7 @@ class macspoofing(plugins.Plugin):
 
     def on_ui_update(self, ui):
         try:
- # Check if 15 minutes have elapsed since the last update
-        if time.time() - self.last_update_time >= 900:  # 900 seconds = 15 minutes
+            if time.time() - self.last_update_time >= 900:
                 self.new_wlan_mac = self.change_mac_address()
                 if self.new_wlan_mac:
                     ui.set('mac_display', f'MAC:{self.new_wlan_mac.upper()}')
