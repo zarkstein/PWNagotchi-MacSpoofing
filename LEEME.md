@@ -6,13 +6,7 @@ La dirección MAC es un identificador único asignado a la tarjeta de red de un 
 
 El "spoofing de MAC" es una técnica utilizada para cambiar la dirección MAC (Control de Acceso a Medios) de un dispositivo de red para hacer que parezca ser otro.
 
-Cuando se realiza el spoofing de MAC, un atacante puede cambiar la dirección MAC de su dispositivo para que coincida con la dirección MAC de otro dispositivo.
-
-El spoofing de MAC también se puede utilizar para realizar ataques de "hombre en el medio", donde el atacante intercepta y modifica el tráfico entre dos dispositivos en la red.
-
-Si la MAC coincide con un dispositivo autorizado en la red, puede permitir al atacante eludir restricciones de seguridad basadas en direcciones MAC, como filtros de acceso, y obtener acceso no autorizado a la red.
-
-En cualquier caso ofuscar la verdadera MAC de nuestro dispositivo siempre nos aportará mayor seguridad.
+Ofuscar la verdadera MAC de nuestro dispositivo siempre nos aportará mayor seguridad.
 
 PWNagotchi MacSpoofing se carga cuando PWNagotchi se inicia y reemplaza la MAC original de nuestro dispositivo, asignándole una nueva MAC aleatoria que cambia cada 15 minutos.
 
