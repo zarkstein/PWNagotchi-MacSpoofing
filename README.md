@@ -40,7 +40,7 @@ Restart the PWNagotchi.
 Configuration
 *****
 
-By default, the plugin is configured to change the MAC address every 15 minutes.
+By default, the plugin is configured to change the MAC address every 15 minutes (900 seconds).
 
 You can adjust this value by modifying the plugin's code in the macspoofing.py file.
 
@@ -82,8 +82,6 @@ Periodic Update:
 *****
 
 The plugin periodically updates the displayed MAC address in the user interface.
-
-The update frequency is defined by the time interval specified in self.last_update_time.
 
 When the specified time interval elapses, the plugin generates a new MAC address and updates the user interface.
 
