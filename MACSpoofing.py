@@ -45,11 +45,11 @@ class macspoofing(plugins.Plugin):
             except subprocess.CalledProcessError as e:
                 logging.error(f"Failed to change MAC address: {e}")
                 retries += 1
-                time.sleep(10)
+                time.sleep(5)
             except Exception as e:
                 logging.exception(repr(e))
                 retries += 1
-                time.sleep(10)
+                time.sleep(5)
         logging.error("Failed to change MAC address after multiple retries.")
         return None
 
