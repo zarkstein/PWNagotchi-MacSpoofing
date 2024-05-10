@@ -9,7 +9,7 @@ import random
 
 class macspoofing(plugins.Plugin):
     __author__ = 'Zarkstein'
-    __version__ = '0.1'
+    __version__ = '0.8'
     __license__ = 'GPL3'
     __description__ = 'Plugin for displaying and periodically changing the MAC address of wlan0 on the Pwnagotchi UI'
 
