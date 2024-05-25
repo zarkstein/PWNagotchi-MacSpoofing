@@ -9,14 +9,15 @@ import random
 
 class macspoofing(plugins.Plugin):
     __author__ = 'Zarkstein'
-    __version__ = '0.8'
+    __version__ = '1.0'
     __license__ = 'GPL3'
     __description__ = 'Plugin for displaying and periodically changing the MAC address of wlan0 on the Pwnagotchi UI'
 
     def __init__(self):
+        self.new_wlan_mac = ""
         self.ready = False
         self.last_update_time = 0
-        self.new_wlan_mac = ""
+        self.update_interval = 900
 
     def on_loaded(self):
         logging.debug("MAC Spoofing Plugin loaded.")
@@ -28,8 +29,8 @@ class macspoofing(plugins.Plugin):
         self.change_mac_address()
 
     def on_ui_setup(self, ui):
-        ui.add_element('mac_display', LabeledValue(color=BLACK, label="", value='Initializing...',
-                                                   position=(135, 95), label_font=fonts.Small, text_font=fonts.Small))
+        ui.add_element('mac_display', LabeledValue(color=BLACK, label="", value='   Initializing...',
+                                                   position=(130, 95), label_font=fonts.Small, text_font=fonts.Small))
 
     def change_mac_address(self, interface="wlan0"):
         max_retries = 12
@@ -43,7 +44,7 @@ class macspoofing(plugins.Plugin):
                 self.new_wlan_mac = new_mac
                 return new_mac
             except subprocess.CalledProcessError as e:
-                logging.error(f"Failed to change MAC address: {e}")
+                logging.error(f"Failed to change MAC address:{e}")
                 retries += 1
                 time.sleep(10)
             except Exception as e:
@@ -55,7 +56,7 @@ class macspoofing(plugins.Plugin):
 
     def on_ui_update(self, ui):
         try:
-            if time.time() - self.last_update_time >= 900:
+            if time.time() - self.last_update_time >= self.update_interval:
                 self.new_wlan_mac = self.change_mac_address()
                 if self.new_wlan_mac:
                     ui.set('mac_display', f'MAC:{self.new_wlan_mac.upper()}')
@@ -69,7 +70,4 @@ class macspoofing(plugins.Plugin):
         logging.info("MAC Spoofing Plugin unloaded.")
 
 # Registering the plugin
-plugins.register_plugin(macspoofing())
-
-# Start UI Loop
-plugins.loop()
+plugins.register(macspoofing())
