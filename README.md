@@ -1,4 +1,9 @@
-# PWNagotchi MacSpoofing Plugin INFO
+#PWNagotchi MacSpoofing Plugin
+
+PWNagotchi MacSpoofing Plugin is an extension for PWNagotchi, a Raspberry Pi-based Wi-Fi network pentesting device.
+
+This plugin automatically changes the MAC address of the wlan0 interface of our Pwnagotchi and displays it on the screen (or not) according to your specific needs.
+
 
 ## What is a MAC address
 
@@ -45,13 +50,6 @@ This can be useful for simulating multiple users or devices in a network audit, 
 
 In summary, MAC spoofing on a Pwnagotchi can provide anonymity, security restriction bypass, identity obfuscation, and identity diversification, which can be beneficial for performing penetration testing, network audits, and other cybersecurity-related activities.
 
-
-#PWNagotchi MacSpoofing Plugin
-
-PWNagotchi MacSpoofing Plugin is an extension for PWNagotchi, a Raspberry Pi-based Wi-Fi network pentesting device.
-
-This plugin automatically changes the MAC address of the wlan0 interface of our Pwnagotchi and displays it on the screen (or not) according to your specific needs.
-
 ## Requirements
 
 - PWNagotchi installed and configured.
@@ -86,7 +84,7 @@ The plugin will start working when you start your PWNagotchi and then perform th
 
 
 # Use and Configuration
-## Customizable variables
+# Customizable variables
 
 You can customize how the plugin works in the MACSpoofing.py code to suit your specific needs:
 
