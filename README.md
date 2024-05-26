@@ -1,4 +1,4 @@
-#PWNagotchi MacSpoofing Plugin
+# PWNagotchi MacSpoofing Plugin
 
 PWNagotchi MacSpoofing Plugin is an extension for PWNagotchi, a Raspberry Pi-based Wi-Fi network pentesting device.
 
