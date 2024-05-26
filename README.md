@@ -121,10 +121,10 @@ More information
 *****
 
 About the author:
-https://github.com/zarkstein/PWNagotchi-MacSpoofing/
+https://github.com/zarkstein/
 
 Plugin available for download at:
-https://github.com/zarkstein/PWNagotchi-MacSpoofing/releases
+https://github.com/zarkstein/PWNagotchi-MacSpoofing/
 
 PWNagotchi:
 https://pwnagotchi.ai/
@@ -134,6 +134,7 @@ https://pwnagotchi.ai/
 Contributions
 *****
 
-Contributions are welcome! If you have ideas for improvements, issues or fixes, please open an issue or submit a pull request.
+Contributions are welcome! 
+If you have ideas for improvements, issues or fixes, please open an issue or submit a pull request.
 
 *****
