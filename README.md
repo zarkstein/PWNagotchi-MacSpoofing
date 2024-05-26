@@ -94,13 +94,12 @@ You can customize how the plugin works in the MACSpoofing.py code to suit your s
   You can adjust the value in seconds to change the MAC address more or less frequently.
   For example, if you want to change the MAC address every 10 minutes, you can set update_interval = 600.
 
-
+  
 - mac_on_display: This variable controls whether or not the new MAC address is displayed in the user interface.
   If you set mac_on_display = True (the new MAC address will be displayed on the screen).
   If you set mac_on_display = False (MAC address will not be displayed on the screen).
   In both cases the new MAC address will be saved in the log.
-
-
+  
 - oui: This variable represents the Organizational Unique Identifier (OUI) that is used as a prefix to generate the MAC address.
   You can change this value to use a different OUI to customize the appearance of the generated MAC address.
   If you want the MAC address to appear to belong to a specific company you can change the OUI to one of the following:
@@ -115,13 +114,6 @@ You can customize how the plugin works in the MACSpoofing.py code to suit your s
 + Hewlett Packard Enterprise: 00:50:56
 + Sony Corporation: 00:0A:89
 + Google LLC: 00:1A:11
-
-Below is an example of how you can customize these variables in the MACSpoofing.py code:
-
-def __init__(self):
-self.mac_on_display = True # Show the new MAC in the UI
-self.update_interval = 600 # Change MAC address every 10 minutes
-self.oui = "00:11:24" # OUI to modify the Raspberry manufacturer ID to identify it as an Apple product.
 
 #
 More information
