@@ -9,15 +9,17 @@ import random
 
 class macspoofing(plugins.Plugin):
     __author__ = 'Zarkstein'
-    __version__ = '1.0'
+    __version__ = '1.1'
     __license__ = 'GPL3'
-    __description__ = 'Plugin for displaying and periodically changing the MAC address of wlan0 on the Pwnagotchi UI'
+    __description__ = 'Plugin for changing the MAC address periodically of wlan0 and displaying ( or not ) on the Pwnagotchi UI'
 
     def __init__(self):
         self.new_wlan_mac = ""
+        self.mac_on_display = True  # Variable para controlar si se muestra la nueva MAC en la pantalla
         self.ready = False
         self.last_update_time = 0
-        self.update_interval = 900
+        self.update_interval = 900  # 900 segundos = 15 minutos
+        self.oui = "00:1A:2B"  # OUI para modificar el ID del fabricante de Raspberry para identificarlo como un producto Cisco.
 
     def on_loaded(self):
         logging.debug("MAC Spoofing Plugin loaded.")
@@ -37,7 +39,7 @@ class macspoofing(plugins.Plugin):
         retries = 0
         while retries < max_retries:
             try:
-                new_mac = ":".join([random.choice("0123456789abcdef") + random.choice("0123456789abcdef") for _ in range(6)])
+                new_mac = self.oui + ":" + ":".join([f"{random.randint(0, 255):02x}" for _ in range(3)])
                 command = f"ip link set dev {interface} address {new_mac}"
                 subprocess.run(command, shell=True, check=True)
                 logging.info(f"Changed MAC address of {interface} to {new_mac}")
@@ -58,8 +60,10 @@ class macspoofing(plugins.Plugin):
         try:
             if time.time() - self.last_update_time >= self.update_interval:
                 self.new_wlan_mac = self.change_mac_address()
-                if self.new_wlan_mac:
+                if self.new_wlan_mac and self.mac_on_display:  # Mostrar la nueva MAC solo si mac_on_display es True
                     ui.set('mac_display', f'MAC:{self.new_wlan_mac.upper()}')
+                else:
+                    ui.set('mac_display', '')  # No mostrar texto en la pantalla
                 self.last_update_time = time.time()
         except Exception as e:
             logging.exception(repr(e))
@@ -69,5 +73,5 @@ class macspoofing(plugins.Plugin):
         ui.remove_element('mac_display')
         logging.info("MAC Spoofing Plugin unloaded.")
 
-# Registering the plugin
+# Register the plugin
 plugins.register(macspoofing())
