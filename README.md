@@ -119,13 +119,13 @@ You can customize how the plugin works in the MACSpoofing.py code to suit your s
 More information
 *****
 
-Information about the author:
+About the author:
 https://github.com/zarkstein/PWNagotchi-MacSpoofing/
 
-Latest version of the plugin available for download at:
+Plugin available for download at:
 https://github.com/zarkstein/PWNagotchi-MacSpoofing/releases
 
-Information about PWNagotchi:
+PWNagotchi:
 https://pwnagotchi.ai/
 
 
