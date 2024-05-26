@@ -15,11 +15,11 @@ class macspoofing(plugins.Plugin):
 
     def __init__(self):
         self.new_wlan_mac = ""
-        self.mac_on_display = True  # Variable para controlar si se muestra la nueva MAC en la pantalla
+        self.mac_on_display = True  # Variable to control whether the new MAC is displayed on the screen
         self.ready = False
         self.last_update_time = 0
-        self.update_interval = 900  # 900 segundos = 15 minutos
-        self.oui = "00:1A:2B"  # OUI para modificar el ID del fabricante de Raspberry para identificarlo como un producto Cisco.
+        self.update_interval = 900  # 900 seconds = 15 minutes
+        self.oui = "00:1A:2B"  # OUI to modify the Raspberry manufacturer ID to identify it as a Cisco product.
 
     def on_loaded(self):
         logging.debug("MAC Spoofing Plugin loaded.")
@@ -60,10 +60,10 @@ class macspoofing(plugins.Plugin):
         try:
             if time.time() - self.last_update_time >= self.update_interval:
                 self.new_wlan_mac = self.change_mac_address()
-                if self.new_wlan_mac and self.mac_on_display:  # Mostrar la nueva MAC solo si mac_on_display es True
+                if self.new_wlan_mac and self.mac_on_display:  # Show the new MAC only if mac_on_display isTrue
                     ui.set('mac_display', f'MAC:{self.new_wlan_mac.upper()}')
                 else:
-                    ui.set('mac_display', '')  # No mostrar texto en la pantalla
+                    ui.set('mac_display', '')  # Do not show text on the screen
                 self.last_update_time = time.time()
         except Exception as e:
             logging.exception(repr(e))
