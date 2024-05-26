@@ -77,7 +77,7 @@ NOTE: You can also activate it from the Plugins section of the web control panel
 The plugin will start working when you start your PWNagotchi and then perform the following functions:
 
 - Automatic change of MAC address of the PWNagotchi
-- MAC address customization using a Cisco specific OUI
+- MAC address customization
 - Show the new MAC on screen
 - Periodic update of the MAC address every 15 minutes
 - Writing the log with information about the new assigned MAC address
@@ -90,17 +90,20 @@ You can customize how the plugin works in the MACSpoofing.py code to suit your s
 
 - update_interval:This variable determines how often the MAC address is changed.
   You can adjust the value in seconds to change the MAC address more or less frequently.
+  The interval default value it's 15 minutes, update_interval = 900.
   For example, if you want to change the MAC address every 10 minutes, you can set update_interval = 600.
-
+  
   
 - mac_on_display: This variable controls whether or not the new MAC address is displayed in the user interface.
+  The default value for mac_on_display it's True.  
   If you set mac_on_display = True (the new MAC address will be displayed on the screen).
   If you set mac_on_display = False (MAC address will not be displayed on the screen).
   In both cases the new MAC address will be saved in the log.
   
 - oui: This variable represents the Organizational Unique Identifier (OUI) that is used as a prefix to generate the MAC address.
+  By default the value for oui = "00:11:24" ( Cisco Product )
   You can change this value to use a different OUI to customize the appearance of the generated MAC address.
-  If you want the MAC address to appear to belong to a specific company you can change the OUI to one of the following:
+  If you want the MAC address to appear to belong to a specific company you can change the value of OUI to one of the following:
 
 + Cisco Systems, Inc.: 00:01:42
 + Apple, Inc.: 00:11:24
