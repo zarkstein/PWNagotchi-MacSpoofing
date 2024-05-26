@@ -17,7 +17,8 @@ Manufacturers can request an OUI from the IEEE and then use it in their devices.
 The last three pairs of characters in a MAC address represent the unique identifier of the device on the network.
 This identifier is assigned by the device manufacturer for each model of one of its products.
 
-Therefore, a MAC address provides a unique way to identify both the device manufacturer and the specific device on a network. This unique identification is essential for network operation and management, allowing devices to communicate with each other efficiently and securely.
+Therefore, a MAC address provides a unique way to identify both the device manufacturer and the specific device on a network.
+This unique identification is essential for network operation and management, allowing devices to communicate with each other efficiently and securely.
 
 
 ## What is MAC Spoofing
@@ -31,7 +32,8 @@ By periodically changing the Pwnagotchi's MAC address, you make it difficult for
 This can help preserve user anonymity and privacy during penetration testing or network audits.
 
 ### Bypass MAC-based security restrictions:
-By changing the MAC address, the Pwnagotchi can bypass security restrictions that are based on the MAC address of the devices. For example, if a Wi-Fi network only allows access to devices with specific MAC addresses, MAC spoofing can allow Pwnagotchi to access the network without needing to know the authorized MAC addresses.
+By changing the MAC address, the Pwnagotchi can bypass security restrictions that are based on the MAC address of the devices.
+For example, if a Wi-Fi network only allows access to devices with specific MAC addresses, MAC spoofing can allow Pwnagotchi to access the network without needing to know the authorized MAC addresses.
 
 ### Device identity obfuscation:
 MAC spoofing can cause the Pwnagotchi to appear as another type of device on the network, which can make it difficult for other users or network administrators to identify the device.
