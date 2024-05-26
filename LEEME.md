@@ -1,116 +1,138 @@
-*****
-PWNagotchi MAC Spoofing por Zarkstein
-*****
+# Complemento PWNagotchi MacSpoofing
 
-La dirección MAC es un identificador único asignado a la tarjeta de red de un dispositivo, y se utiliza para identificar de manera única ese dispositivo en una red.
+PWNagotchi MacSpoofing Plugin es una extensión para PWNagotchi, un dispositivo de prueba de red Wi-Fi basado en Raspberry Pi.
 
-El "spoofing de MAC" es una técnica utilizada para cambiar la dirección MAC (Control de Acceso a Medios) de un dispositivo de red para hacer que parezca ser otro.
-
-Ofuscar la verdadera MAC de nuestro dispositivo siempre nos aportará mayor seguridad.
-
-PWNagotchi MacSpoofing se carga cuando PWNagotchi se inicia y reemplaza la MAC original de nuestro dispositivo, asignándole una nueva MAC aleatoria que cambia cada 15 minutos.
-
-La nueva MAC asignada se muestra en la esquina inferior derecha de la pantalla y/o la interfaz de usuario.
+Este complemento cambia automáticamente la dirección MAC de la interfaz wlan0 de nuestro Pwnagotchi y la muestra en pantalla (o no) según sus necesidades específicas.
 
 
-*****
-Instalación
-*****
+## ¿Qué es una dirección MAC?
 
-Copia el archivo MACSpoofing.py en el directorio "/etc/pwnagotchi/custom-plugins/" en tu PWNagotchi.
+La dirección MAC es un identificador único asignado a la tarjeta de red de un dispositivo conectado a una red.
 
-Modifica el archivo "/etc/pwnagotchi/config.toml" y asegúrate de tener la siguiente línea:
+Por ejemplo, una dirección MAC típica tendría este aspecto: AB:CD:EF:12:34:56.
 
-main.custom_plugins = "/etc/pwnagotchi/custom-plugins/"
+En esta dirección MAC podemos encontrar dos partes:
 
-Agrega la siguiente línea:
+### OUI (Identificador único organizacional):
+Los primeros tres pares de caracteres en una dirección MAC representan el OUI, que identifica al fabricante del dispositivo de red.
+El Instituto de Ingenieros Eléctricos y Electrónicos (IEEE) asigna OUI a los fabricantes y garantiza que sean únicos.
+Los fabricantes pueden solicitar una OUI al IEEE y luego utilizarla en sus dispositivos.
 
-main.plugins.MACSpoofing.enabled = true
+### Identificador del dispositivo (ID):
+Los últimos tres pares de caracteres de una dirección MAC representan el identificador único del dispositivo en la red.
+Este identificador lo asigna el fabricante del dispositivo para cada modelo de uno de sus productos.
 
-Reinicia el PWNagotchi.
-
-
-*****
-Configuración
-*****
-
-Por defecto, el plugin está configurado para cambiar la dirección MAC cada 15 minutos (900 segundos). 
-
-Puedes ajustar este valor modificando el código del plugin en el archivo macspoofing.py.
+Por lo tanto, una dirección MAC proporciona una forma única de identificar tanto al fabricante del dispositivo como al dispositivo específico en una red.
+Esta identificación única es esencial para la operación y administración de la red, permitiendo que los dispositivos se comuniquen entre sí de manera eficiente y segura.
 
 
-*****
-FUNCIONAMIENTO
-*****
-¿Cómo funciona PWNagotchi MACSpoofing?
-*****
+## ¿Qué es la suplantación de MAC?
 
-*****
-Inicio y Carga del Plugin:
-*****
+La "suplantación de MAC" es una técnica utilizada para cambiar la dirección MAC de un dispositivo de red para que parezca otro dispositivo.
 
-Cuando Pwnagotchi se inicia, el plugin "MAC Spoofing" se carga automáticamente si está instalado y activado.
+La suplantación de MAC en un Pwnagotchi puede proporcionar varias ventajas:
 
-Durante la carga, se establece el estado inicial del plugin y se configura para estar listo para su uso.
-        
+### Anonimato y privacidad:
+Al cambiar periódicamente la dirección MAC del Pwnagotchi, dificulta que otros dispositivos o redes rastreen o identifiquen el Pwnagotchi de manera consistente.
+Esto puede ayudar a preservar el anonimato y la privacidad del usuario durante las pruebas de penetración o las auditorías de red.
 
-*****
-Cambio de Dirección MAC:
-*****
+### Evite las restricciones de seguridad basadas en MAC:
+Al cambiar la dirección MAC, Pwnagotchi puede eludir las restricciones de seguridad que se basan en la dirección MAC de los dispositivos.
+Por ejemplo, si una red Wi-Fi solo permite el acceso a dispositivos con direcciones MAC específicas, la suplantación de MAC puede permitir que Pwnagotchi acceda a la red sin necesidad de conocer las direcciones MAC autorizadas.
 
-El plugin genera una nueva dirección MAC aleatoria para la interfaz wlan0 (WiFi).
+### Ofuscación de la identidad del dispositivo:
+La suplantación de MAC puede hacer que Pwnagotchi aparezca como otro tipo de dispositivo en la red, lo que puede dificultar que otros usuarios o administradores de red identifiquen el dispositivo.
+Esto puede resultar útil para realizar pruebas de penetración de forma más sigilosa o para evitar la detección por parte de las medidas de seguridad de la red.
 
-Utiliza el comando ip link set de Linux para cambiar la dirección MAC de la interfaz wlan0 a la nueva dirección generada.
+### Diversificación de identidad:
+Al cambiar periódicamente la dirección MAC, Pwnagotchi puede presentarse como múltiples dispositivos distintos en la red.
+Esto puede resultar útil para simular varios usuarios o dispositivos en una auditoría de red, lo que permite detectar y analizar diferentes comportamientos o vulnerabilidades.
 
-Si el cambio de dirección MAC falla, el plugin realiza varios intentos (definidos por max_retries) con intervalos de espera (definidos por time.sleep) antes de registrar un error.
+En resumen, la suplantación de MAC en un Pwnagotchi puede proporcionar anonimato, elusión de restricciones de seguridad, ofuscación de identidad y diversificación de identidad, lo que puede resultar beneficioso para realizar pruebas de penetración, auditorías de red y otras actividades relacionadas con la ciberseguridad.
 
+## Requisitos
 
-*****
-Interfaz de Usuario:
-*****
-
-El plugin muestra la dirección MAC actualizada en la interfaz de usuario de Pwnagotchi.
-
-Utiliza el componente LabeledValue de la biblioteca de interfaz de usuario de Pwnagotchi para mostrar la dirección MAC en la pantalla.
+- PWNagotchi instalado y configurado.
+- Conexión a Internet para descargar y actualizar el complemento.
 
 
-*****
-Actualización Periódica:
-*****
+## Instalación del complemento PWNagotchi MacSpoofing
 
-El plugin actualiza periódicamente la dirección MAC mostrada en la interfaz de usuario.
+1. Descargue el archivo MACSpoofing.py de este repositorio:
+https://github.com/zarkstein/PWNagotchi-MacSpoofing/
 
-Cuando transcurre el intervalo de tiempo especificado, el plugin genera una nueva dirección MAC y actualiza la interfaz de usuario.
+2. Copie el archivo MACSpoofing.py a su directorio "/etc/pwnagotchi/custom-plugins/" en su tarjeta microSD.
+
+3. Modifique su archivo /etc/pwnagotchi/config.toml y agregue la siguiente línea:
+
+main.plugins.macspoofing.enabled = verdadero
+
+NOTA: También puedes activarlo desde la sección Complementos del panel de control web.
+
+4. Reinicia tu PWNagotchi.
 
 
-*****
-Desactivación del Plugin:
-*****
+## Características del complemento PWNagotchi MacSpoofing
 
-Cuando el plugin se se desactiva, elimina el elemento de la interfaz de usuario relacionado con la dirección MAC.
+El complemento comenzará a funcionar cuando inicie su PWNagotchi y luego realizará las siguientes funciones:
 
-Esto ayuda a limpiar la interfaz de usuario y liberar recursos cuando el plugin ya no está en uso.
+- Cambio automático de dirección MAC del PWNagotchi
+- Personalización de la dirección MAC
+- Mostrar la nueva MAC en pantalla
+- Actualización periódica de la dirección MAC cada 15 minutos
+- Escribir el log con información sobre la nueva dirección MAC asignada
 
-*****
+
+# Uso y Configuración
+# Variables personalizables
+
+Puede personalizar cómo funciona el complemento en el código MACSpoofing.py para satisfacer sus necesidades específicas:
+
+- update_interval: esta variable determina con qué frecuencia se cambia la dirección MAC.
+ Puede ajustar el valor en segundos para cambiar la dirección MAC con mayor o menor frecuencia.
+ El valor predeterminado del intervalo es 15 minutos, update_interval = 900.
+ Por ejemplo, si desea cambiar la dirección MAC cada 10 minutos, puede configurar update_interval = 600.
+
+- mac_on_display: esta variable controla si la nueva dirección MAC se muestra o no en la interfaz de usuario.
+ El valor predeterminado para mac_on_display es Verdadero.
+ Si configura mac_on_display = True (la nueva dirección MAC se mostrará en la pantalla).
+ Si configura mac_on_display = False (la dirección MAC no se mostrará en la pantalla).
+ En ambos casos la nueva dirección MAC se guardará en el registro.
+
+- oui: esta variable representa el identificador único organizacional (OUI) que se utiliza como prefijo para generar la dirección MAC.
+ De forma predeterminada, el valor de oui = "00:11:24" (producto de Cisco)
+ Puede cambiar este valor para usar una OUI diferente para personalizar la apariencia de la dirección MAC generada.
+ Si desea que la dirección MAC parezca pertenecer a una empresa específica, puede cambiar el valor de OUI a uno de los siguientes:
+
++ Cisco Systems, Inc.: 00:01:42
++ Apple, Inc.: 00:11:24
++ Corporación Intel: 00:00:86
++ Samsung Electronics Co., Ltd.: 00:16:32
++ Corporación Microsoft: 00:0F:FB
++ Huawei Technologies Co., Ltd.: 00:E0:FC
++ Dell Inc.: 00:14:22
++ Hewlett Packard Enterprise: 00:50:56
++ Corporación Sony: 00:0A:89
++ Google LLC: 00:1A:11
+
+#
 Más información
 *****
 
-Información sobre el autor:
+Sobre el Autor:
 https://github.com/zarkstein/PWNagotchi-MacSpoofing/
 
-Última versión del plugin disponible para descargar en:
+Complemento disponible para descargar en:
 https://github.com/zarkstein/PWNagotchi-MacSpoofing/releases
+
+PWNagotchi:
+https://pwnagotchi.ai/
+
 
 *****
 Contribuciones
 *****
 
-¡Las contribuciones son bienvenidas! Si tienes ideas para mejoras, problemas o correcciones, por favor, abre un issue o envía un pull request.
-
-*****
-Licencia
-*****
-
-Este plugin se publica bajo la licencia GPL-3.0. Para más detalles, por favor, consulta el archivo LICENSE.
+¡Las contribuciones son bienvenidas! Si tiene ideas para mejoras, problemas o soluciones, abra un problema o envíe una solicitud de extracción.
 
 *****
