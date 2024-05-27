@@ -14,12 +14,12 @@ class macspoofing(plugins.Plugin):
     __description__ = 'Plugin for changing the MAC address periodically of wlan0 and displaying ( or not ) on the Pwnagotchi UI'
 
     def __init__(self):
-        self.new_wlan_mac = ""
         self.mac_on_display = True  # Variable to control whether the new MAC is displayed on the screen
-        self.ready = False
-        self.last_update_time = 0
         self.update_interval = 900  # 900 seconds = 15 minutes
         self.oui = "00:1A:2B"  # OUI to modify the Raspberry manufacturer ID to identify it as a Cisco product.
+        self.new_wlan_mac = ""
+        self.ready = False
+        self.last_update_time = 0
 
     def on_loaded(self):
         logging.debug("MAC Spoofing Plugin loaded.")
